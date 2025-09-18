@@ -111,3 +111,17 @@ form input[type="submit"] {
 form input[type="submit"]:hover {
   background-color: #c65f12;
 }
+#ramen-detail button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.2s;
+}
+
+#ramen-detail button:hover {
+  background-color: #b52a37;
+}
