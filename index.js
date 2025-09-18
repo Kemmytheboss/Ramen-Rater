@@ -76,3 +76,30 @@ function addSubmitListener() {
     form.reset();
   });
 }
+
+// 4. Edit ramen (Advanced)
+function addEditListener() {
+  const form = document.querySelector('#edit-ramen');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const rating = e.target['new-rating'].value;
+    const comment = e.target['new-comment'].value;
+    const ramenDetail = document.querySelector('#ramen-detail');
+    const ramenId = ramenDetail.dataset.selectedRamenId;
+
+    document.querySelector('#rating-display').textContent = rating;
+    document.querySelector('#comment-display').textContent = comment;
+
+    // Optional: persist with PATCH
+    // fetch(`${BASE_URL}/${ramenId}`, {
+    //   method: 'PATCH',
+    //   headers: {
+    //     'Content-Type': 'application/json'
+    //   },
+    //   body: JSON.stringify({ rating, comment })
+    // });
+
+    form.reset();
+  });
+}
