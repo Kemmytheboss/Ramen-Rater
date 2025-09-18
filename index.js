@@ -14,3 +14,13 @@ function displayRamens() {
       }
     });
 }
+function renderRamenMenuImage(ramen) {
+  const menu = document.querySelector('#ramen-menu');
+  const img = document.createElement('img');
+  img.src = ramen.image;
+  img.alt = ramen.name;
+
+  img.addEventListener('click', () => handleClick(ramen));
+
+  menu.appendChild(img);
+}
