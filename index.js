@@ -103,3 +103,35 @@ function addEditListener() {
     form.reset();
   });
 }
+
+// 5. Delete ramen (Extra Advanced)
+function addDeleteButton() {
+  const deleteBtn = document.createElement('button');
+  deleteBtn.textContent = 'Delete Ramen';
+  document.querySelector('#ramen-detail').appendChild(deleteBtn);
+
+  deleteBtn.addEventListener('click', () => {
+    const ramenId = document.querySelector('#ramen-detail').dataset.selectedRamenId;
+    const imgList = document.querySelectorAll('#ramen-menu img');
+
+    // Remove from menu
+    imgList.forEach(img => {
+      if (img.alt === document.querySelector('.name').textContent) {
+        img.remove();
+      }
+    });
+
+    // Clear detail section
+    document.querySelector('.detail-image').src = '';
+    document.querySelector('.name').textContent = '';
+    document.querySelector('.restaurant').textContent = '';
+    document.querySelector('#rating-display').textContent = '';
+    document.querySelector('#comment-display').textContent = '';
+
+    // Optional: delete from server
+    // fetch(`${BASE_URL}/${ramenId}`, {
+    //   method: 'DELETE'
+    // });
+  });
+}
+
