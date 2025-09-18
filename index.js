@@ -47,3 +47,32 @@ function showRamenDetails(ramen) {
   const ramenDetail = document.querySelector('#ramen-detail');
   ramenDetail.dataset.selectedRamenId = ramen.id;
 }
+
+// 3. Add new ramen
+function addSubmitListener() {
+  const form = document.querySelector('#new-ramen');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const newRamen = {
+      name: e.target.name.value,
+      restaurant: e.target.restaurant.value,
+      image: e.target.image.value,
+      rating: e.target.rating.value,
+      comment: e.target['new-comment'].value
+    };
+
+    renderRamenMenuImage(newRamen);
+
+    // Optional: POST to server
+    // fetch(BASE_URL, {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json'
+    //   },
+    //   body: JSON.stringify(newRamen)
+    // });
+
+    form.reset();
+  });
+}
