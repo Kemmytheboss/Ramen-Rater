@@ -1,7 +1,7 @@
 // Our BASE URL
 const BASE_URL = 'http://localhost:3000/ramens';
 
-// Display all ramens
+// 1. Display all ramens
 function displayRamens() {
   fetch(BASE_URL)
     .then(res => res.json())
@@ -23,4 +23,27 @@ function renderRamenMenuImage(ramen) {
   img.addEventListener('click', () => handleClick(ramen));
 
   menu.appendChild(img);
+}
+// 2. Display ramen details when clicked
+function handleClick(ramen) {
+  showRamenDetails(ramen);
+}
+
+function showRamenDetails(ramen) {
+  const detailImage = document.querySelector('.detail-image');
+  const name = document.querySelector('.name');
+  const restaurant = document.querySelector('.restaurant');
+  const rating = document.querySelector('#rating-display');
+  const comment = document.querySelector('#comment-display');
+
+  detailImage.src = ramen.image;
+  detailImage.alt = ramen.name;
+  name.textContent = ramen.name;
+  restaurant.textContent = ramen.restaurant;
+  rating.textContent = ramen.rating;
+  comment.textContent = ramen.comment;
+
+  // Store currently selected ramen in a data attribute
+  const ramenDetail = document.querySelector('#ramen-detail');
+  ramenDetail.dataset.selectedRamenId = ramen.id;
 }
