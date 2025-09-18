@@ -135,3 +135,12 @@ function addDeleteButton() {
   });
 }
 
+// 6. Main function to start app
+function main() {
+  displayRamens();
+  addSubmitListener();
+  addEditListener();        // Optional (advanced)
+  addDeleteButton();        // Optional (advanced)
+}
+
+document.addEventListener('DOMContentLoaded', main);
