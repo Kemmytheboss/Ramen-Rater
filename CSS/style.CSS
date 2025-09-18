@@ -34,3 +34,80 @@ h1 {
   transform: scale(1.1);
   border-color: #e57c23;
 }
+
+
+
+.detail-image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 3px solid #e57c23;
+}
+
+#ramen-detail .info {
+  flex: 1;
+}
+
+#ramen-detail .name {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+#ramen-detail .restaurant {
+  font-size: 18px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+#ramen-detail p {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+form {
+  background-color: #fff;
+  border: 2px solid #f1d8b9;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+form h4 {
+  margin-bottom: 15px;
+  color: #e57c23;
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="number"],
+form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+form textarea {
+  resize: vertical;
+}
+
+form input[type="submit"] {
+  background-color: #e57c23;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+form input[type="submit"]:hover {
+  background-color: #c65f12;
+}
